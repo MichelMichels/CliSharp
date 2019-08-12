@@ -5,6 +5,11 @@
     <Authors>Michel Michels</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/MichelMichels/CliSharp</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>© 2019 Michel Michels</Copyright>
+    <Description>A small .NET standard library to easily execute external command line tools</Description>
+    <RepositoryUrl>https://github.com/MichelMichels/CliSharp</RepositoryUrl>
+    <PackageTags>command line, cli, fluent</PackageTags>
   </PropertyGroup>
 
 </Project>
