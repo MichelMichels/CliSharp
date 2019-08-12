@@ -1,4 +1,4 @@
-![Nuget](https://img.shields.io/nuget/v/CliSharp)
+[![Nuget](https://img.shields.io/nuget/v/CliSharp)](https://www.nuget.org/packages/CliSharp/)
 
 # CliSharp
 
