@@ -38,8 +38,8 @@ The `.AddSwitch(...)` method accepts `CommandLineSwitch`-objects or `string`-obj
 
 Possible switch types are:
 * CommandLineSwitch - e.g. "/help"
-* CommandLineSwitch<T> - e.g. "/output test.txt"
-* CommandLineSwitchPrefix<T> - e.g. "/drive label=Test", in which "label" is the prefix
+* CommandLineSwitch\<T\> - e.g. "/output test.txt"
+* CommandLineSwitchPrefix\<T\> - e.g. "/drive label=Test", in which "label" is the prefix
 
 ### `AddConditionalSwitch(...)`
 
