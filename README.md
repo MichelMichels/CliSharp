@@ -9,7 +9,7 @@ Clone the repository or get the NuGet package from [NuGet.org](https://www.nuget
 ### Example
 
 The API is implemented with a fluent design and starts with a static method call on the `Cli` class.
-```
+```csharp
 using CliSharp.Core;
 using CliSharp.Extensions;
 
@@ -47,17 +47,27 @@ The `.AddConditionalSwitch` method does the same as the `AddSwitch` method, but 
 
 The final `Execute` method executes the command and will throw an `ExitCodeException` if the returned `ExitCode` isn`t 0.
 
+### Using enums
+
+Using enums for CommandLineSwitch values is supported. The library will use the enum name as a string or you can use the attribute `ParameterName` from `CliSharp.Attributes` in your enum to override the value.
+
+```csharp
+enum TestValue
+{
+    [ParameterName("r")]
+    Red,
+
+    [ParameterName("g")]
+    Green,
+
+    [ParameterName("b")]
+    Blue
+}
+```
+
 ## Running the tests
 
-There is a test library included `CliSharpTests` which can be run with the Test Explorer in Visual Studio.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+There is a MsTest library included `CliSharpTests` which can be run with the Test Explorer in Visual Studio.
 
 ## Authors
 
