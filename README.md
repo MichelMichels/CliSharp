@@ -39,7 +39,7 @@ Possible switch types are:
 * CommandLineSwitch<T> - e.g. "/output test.txt"
 * CommandLineSwitchPrefix<T> - e.g. "/drive label=Test", in which "label" is the prefix
 
-### 'AddConditionalSwitch(...)'
+### `AddConditionalSwitch(...)`
 
 The `.AddConditionalSwitch` method does the same as the `AddSwitch` method, but it's possible to add a boolean condition as argument. This can come in handy when using variable parameters.
 
