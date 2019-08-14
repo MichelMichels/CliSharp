@@ -66,6 +66,19 @@ namespace CliSharpTests.Core
 
             // Assert
             Assert.AreEqual("/test 52", output);
+        }    
+
+        [TestMethod]
+        public void StringWithSpacesAsArgument_Test()
+        {
+            // Arrange
+            var cliSwitch = new CommandLineSwitch<string>("/password", "horse test debug");
+
+            // Act
+            var output = cliSwitch.ToString();
+
+            // Assert
+            Assert.AreEqual("/password \"horse test debug\"", output);
         }
     }
 }

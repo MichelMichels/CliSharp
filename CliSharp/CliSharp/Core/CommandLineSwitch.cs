@@ -34,15 +34,28 @@ namespace CliSharp.Core
 
         public override string ToString()
         {
+            var switchLabel = base.ToString();
+
+            string parameter;
             switch (Value)
             {
                 case Enum enumValue:
-                    return $"{Switch} {enumValue.ToFriendlyString()}";
+                    parameter = enumValue.ToFriendlyString();
+                    break;
                 case string stringValue:
-                    return $"{Switch} {stringValue}";
+                    parameter = stringValue;
+                    break;
                 default:
-                    return $"{Switch} {Value}";
+                    parameter = Value.ToString();
+                    break;
             }
+
+            if(parameter.Contains(" "))
+            {
+                parameter = $"\"{parameter}\"";
+            }
+
+            return $"{switchLabel} {parameter}";
         }
         public override object Clone()
         {

@@ -10,6 +10,8 @@
     <Description>A small .NET standard library to easily execute external command line tools</Description>
     <RepositoryUrl>https://github.com/MichelMichels/CliSharp</RepositoryUrl>
     <PackageTags>command line, cli, fluent</PackageTags>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Added support for parameters with spaces, now automaticallly surrounded with double quotes</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
