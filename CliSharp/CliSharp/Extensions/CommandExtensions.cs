@@ -62,10 +62,11 @@ namespace CliSharp.Extensions
         {
             var process = injectedProcess ?? new ProcessProxy();
 
+            var arguments = String.Join(" ", command.Switches.Select(x => x.ToString()));
             var info = new ProcessStartInfo
             {
                 FileName = command.Program,
-                Arguments = String.Join(" ", command.Switches.Select(x => x.ToString())),
+                Arguments = arguments,
                 UseShellExecute = false,
             };
 
@@ -74,7 +75,7 @@ namespace CliSharp.Extensions
             process.WaitForExit();
 
             if (process.ExitCode != 0)
-                throw new ExitCodeException($"Something went wrong.");
+                throw new ExitCodeException($"Something went wrong. Arguments: {arguments}");
 
             if (injectedProcess == null)
                 process.Dispose();
