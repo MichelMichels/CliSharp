@@ -1,17 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Michel Michels</Authors>
+    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/MichelMichels/CliSharp</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>© 2019 Michel Michels</Copyright>
+    <Copyright>© 2024 Michel Michels</Copyright>
     <Description>A small .NET standard library to easily execute external command line tools</Description>
     <RepositoryUrl>https://github.com/MichelMichels/CliSharp</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <PackageTags>command line, cli, fluent</PackageTags>
-    <Version>1.0.1</Version>
-    <PackageReleaseNotes>Added support for parameters with spaces, now automaticallly surrounded with double quotes</PackageReleaseNotes>
+    <PackageReleaseNotes>
+      - Release 2.0.0
+      - Breaking namespace change to MichelMichels.CliSharp
+      - Update to .NET 8
+    </PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
 </Project>
