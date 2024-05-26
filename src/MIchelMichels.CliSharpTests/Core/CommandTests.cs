@@ -56,4 +56,21 @@ public class CommandTests
 
         // Assert        
     }
+
+    [TestMethod]
+    public async Task StandardOutput_Test()
+    {
+        // Arrange
+
+        // Act
+        CliCommand command = await Cli.SetProgram("nslookup")
+            .AddSwitch("google.com")
+            .Execute()
+            .Wait();
+
+        string output = command.Process.StandardOutput.ReadToEnd();
+
+        // Assert
+        Assert.IsTrue(!string.IsNullOrEmpty(output));
+    }
 }

@@ -12,6 +12,8 @@
     <RepositoryUrl>https://github.com/MichelMichels/CliSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>command line, cli, fluent</PackageTags>
+    <Title>MichelMichels.CliSharp</Title>
+    <RootNamespace>MichelMichels.CliSharp</RootNamespace>
     <PackageReleaseNotes>
       - Release 2.0.0
       - Breaking namespace change to MichelMichels.CliSharp

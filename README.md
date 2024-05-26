@@ -1,6 +1,6 @@
-[![Nuget](https://img.shields.io/nuget/v/CliSharp)](https://www.nuget.org/packages/CliSharp/)
+﻿[![Nuget](https://img.shields.io/nuget/v/CliSharp)](https://www.nuget.org/packages/CliSharp/)
 
-# CliSharp
+# CliSharp 💻
 
 A small C# standard library to easily execute external command line tools.
 

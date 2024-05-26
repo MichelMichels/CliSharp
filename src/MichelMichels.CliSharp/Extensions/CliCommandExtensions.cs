@@ -74,22 +74,15 @@ public static class CliCommandExtensions
             FileName = command.Program,
             Arguments = arguments,
             UseShellExecute = false,
+            RedirectStandardError = true,
+            RedirectStandardInput = true,
+            RedirectStandardOutput = true,
         };
 
         process.StartInfo = info;
         process.Start();
 
         return command;
-
-        //if (process.ExitCode != 0)
-        //{
-        //    throw new ExitCodeException($"Something went wrong. Arguments: {arguments}");
-        //}
-
-        //if (injectedProcess is null)
-        //{
-        //    process.Dispose();
-        //}
     }
 
     public static async Task<TCommand> Wait<TCommand>(this TCommand command) where TCommand : CliCommand
