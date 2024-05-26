@@ -1,6 +1,6 @@
-[![Nuget](https://img.shields.io/nuget/v/CliSharp)](https://www.nuget.org/packages/CliSharp/)
+﻿[![Nuget](https://img.shields.io/nuget/v/CliSharp)](https://www.nuget.org/packages/CliSharp/)
 
-# CliSharp
+# CliSharp 💻
 
 A small C# standard library to easily execute external command line tools.
 
@@ -69,7 +69,7 @@ enum TestValue
 
 ## Running the tests
 
-There is a MsTest library included `CliSharpTests` which can be run with the Test Explorer in Visual Studio.
+There is a MsTest library included `MichelMichels.CliSharpTests` which can be run with the Test Explorer in Visual Studio.
 
 ## Authors
 
