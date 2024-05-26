@@ -1,29 +1,51 @@
-﻿[![Nuget](https://img.shields.io/nuget/v/CliSharp)](https://www.nuget.org/packages/CliSharp/)
-
+﻿<!-- omit in toc -->
 # CliSharp 💻
 
-A small C# standard library to easily execute external command line tools.
+[![NuGet version](https://img.shields.io/nuget/v/MichelMichels.CliSharp)](https://www.nuget.org/packages/MichelMichels.CliSharp/)
+
+This project contains a C# library to easily execute external command line tools on Windows OS.
+
+<!-- omit in toc -->
+## Table of contents
+- [Getting Started](#getting-started)
+  - [Example](#example)
+  - [`.SetProgram(...)`](#setprogram)
+  - [`.SetTimeout(...)`](#settimeout)
+  - [`AddSwitch(...)`](#addswitch)
+  - [`AddConditionalSwitch(...)`](#addconditionalswitch)
+  - [`.Execute()`](#execute)
+  - [`.Wait()`](#wait)
+  - [Using enums](#using-enums)
+- [Running the tests](#running-the-tests)
+- [Authors](#authors)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+
+---
 
 ## Getting Started
 
-Clone the repository or get the NuGet package from [NuGet.org](https://www.nuget.org/packages/CliSharp/).
+Clone the repository or get the NuGet package from [NuGet.org](https://www.nuget.org/packages/MichelMichels.CliSharp/).
 
 ### Example
 
 The API is implemented with a fluent design and starts with a static method call on the `Cli` class.
 ```csharp
-using CliSharp.Core;
-using CliSharp.Extensions;
+using MichelMichels.CliSharp.Core;
+using MichelMichels.CliSharp.Extensions;
 
 (...)
 
-Cli
+await Cli
     .SetProgram("notepad.exe")
+    .SetTimeout(TimeSpan.FromSeconds(1))
     .AddSwitch(...)
     (...)
     .AddConditionalSwitch(...)
     (...)
-    .Execute();
+    .Execute()
+    .Wait();
 
 (...)
 ```
@@ -31,6 +53,10 @@ Cli
 ### `.SetProgram(...)`
 
 The `SetProgram` method sets the executable's path.
+
+### `.SetTimeout(...)`
+
+The `SetTimeout` method adds a timeout for when to kill the process and return to the original thread.
 
 ### `AddSwitch(...)`
 
@@ -47,7 +73,11 @@ The `.AddConditionalSwitch` method does the same as the `AddSwitch` method, but 
 
 ### `.Execute()`
 
-The final `Execute` method executes the command and will throw an `ExitCodeException` if the returned `ExitCode` isn`t 0.
+The `Execute` method executes the command and will throw an `ExitCodeException` if the returned `ExitCode` isn`t 0.
+
+### `.Wait()`
+
+The `Wait` method enables `await` and waits for the timeout or program to complete.
 
 ### Using enums
 
