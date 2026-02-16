@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/MichelMichels/CliSharp</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>© 2024 Michel Michels</Copyright>
+    <Copyright>© 2026 Michel Michels</Copyright>
     <Description>A small .NET standard library to easily execute external command line tools</Description>
     <RepositoryUrl>https://github.com/MichelMichels/CliSharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -15,9 +15,8 @@
     <Title>MichelMichels.CliSharp</Title>
     <RootNamespace>MichelMichels.CliSharp</RootNamespace>
     <PackageReleaseNotes>
-      - Release 3.0.0      
-      - Update to .NET 10
-	  - Fix ParameterNameAttribute
+      - Release 3.1.0      
+      - Fix nullable value warning
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

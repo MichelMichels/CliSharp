@@ -15,9 +15,13 @@ public class CliCommandLineSwitch(string name) : ICliCommandLineSwitch, ICloneab
     public override string ToString() => $"{Switch}";
 }
 
-public class CliCommandLineSwitch<T>(string name, T parameter) : CliCommandLineSwitch(name), ICommandLineSwitch<T>
+public class CliCommandLineSwitch<T>(string name, T? value) : CliCommandLineSwitch(name), ICommandLineSwitch<T>
 {
-    public T Value { get; set; } = parameter;
+    public CliCommandLineSwitch(string name) : this(name, default)
+    {
+    }
+
+    public T? Value { get; set; } = value;
 
     public override string ToString()
     {

@@ -3,7 +3,7 @@ using System;
 
 namespace MichelMichels.CliSharp.Core;
 
-public class CliCommandLineSwitchPrefix<T>(string name, T parameter, string prefix) : CliCommandLineSwitch<T>(name, parameter), ICliCommandLineSwitchPrefix<T>
+public class CliCommandLineSwitchPrefix<T>(string name, T? parameter, string prefix) : CliCommandLineSwitch<T>(name, parameter), ICliCommandLineSwitchPrefix<T>
 {
     public string Prefix { get; set; } = prefix;
 

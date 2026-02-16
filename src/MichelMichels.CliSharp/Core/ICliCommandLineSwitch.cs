@@ -7,7 +7,7 @@ public interface ICliCommandLineSwitch
 
 public interface ICommandLineSwitch<T> : ICliCommandLineSwitch
 {
-    T Value { get; set; }
+    T? Value { get; set; }
 }
 
 
