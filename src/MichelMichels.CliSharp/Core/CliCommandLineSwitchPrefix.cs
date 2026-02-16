@@ -3,19 +3,9 @@ using System;
 
 namespace MichelMichels.CliSharp.Core;
 
-
-public class CliCommandLineSwitchPrefix<T> : CliCommandLineSwitch<T>, ICliCommandLineSwitchPrefix<T>
+public class CliCommandLineSwitchPrefix<T>(string name, T parameter, string prefix) : CliCommandLineSwitch<T>(name, parameter), ICliCommandLineSwitchPrefix<T>
 {
-    public CliCommandLineSwitchPrefix(string name, string prefix) : base(name)
-    {
-        Prefix = prefix;
-    }
-    public CliCommandLineSwitchPrefix(string name, T parameter, string prefix) : base(name, parameter)
-    {
-        Prefix = prefix;
-    }
-
-    public string Prefix { get; set; }
+    public string Prefix { get; set; } = prefix;
 
     public override string ToString()
     {

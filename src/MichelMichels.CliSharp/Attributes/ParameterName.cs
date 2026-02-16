@@ -2,8 +2,8 @@
 
 namespace MichelMichels.CliSharp.Attributes;
 
-[AttributeUsage(AttributeTargets.Enum)]
-public class ParameterName(string name) : Attribute()
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
+public class ParameterNameAttribute(string name) : Attribute
 {
     public string Name { get; private set; } = name;
 }

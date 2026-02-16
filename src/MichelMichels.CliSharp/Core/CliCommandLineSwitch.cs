@@ -15,15 +15,9 @@ public class CliCommandLineSwitch(string name) : ICliCommandLineSwitch, ICloneab
     public override string ToString() => $"{Switch}";
 }
 
-public class CliCommandLineSwitch<T> : CliCommandLineSwitch, ICommandLineSwitch<T>
+public class CliCommandLineSwitch<T>(string name, T parameter) : CliCommandLineSwitch(name), ICommandLineSwitch<T>
 {
-    public CliCommandLineSwitch(string name) : base(name) { }
-    public CliCommandLineSwitch(string name, T parameter) : base(name)
-    {
-        Value = parameter;
-    }
-
-    public T Value { get; set; }
+    public T Value { get; set; } = parameter;
 
     public override string ToString()
     {
@@ -32,7 +26,7 @@ public class CliCommandLineSwitch<T> : CliCommandLineSwitch, ICommandLineSwitch<
         {
             Enum enumValue => enumValue.ToFriendlyString(),
             string stringValue => stringValue,
-            _ => Value.ToString(),
+            _ => Value?.ToString() ?? string.Empty,
         };
         if (parameter.Contains(' '))
         {
@@ -43,6 +37,6 @@ public class CliCommandLineSwitch<T> : CliCommandLineSwitch, ICommandLineSwitch<
     }
     public override object Clone()
     {
-        return new CliCommandLineSwitch<T>(Switch, Value);
+        return Value is not null ? new CliCommandLineSwitch<T>(Switch, Value) : new CliCommandLineSwitch(Switch);
     }
 }

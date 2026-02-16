@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Authors>Michel Michels</Authors>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -15,9 +15,9 @@
     <Title>MichelMichels.CliSharp</Title>
     <RootNamespace>MichelMichels.CliSharp</RootNamespace>
     <PackageReleaseNotes>
-      - Release 2.0.0
-      - Breaking namespace change to MichelMichels.CliSharp
-      - Update to .NET 8
+      - Release 3.0.0      
+      - Update to .NET 10
+	  - Fix ParameterNameAttribute
     </PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
